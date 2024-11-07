@@ -9,10 +9,13 @@
   <h1>Register Page</h1>
   <a href="/">Home</a>
   <form method="post" action="register">
-    <label>Enter Username:<br><input type="text" name="username"></label><br>
-    <label>Enter Password:<br><input type="password" name="password"></label>
+    <label>Enter Username:<br><input type="text" name="username" required></label><br>
+    <label>Enter Password:<br><input type="password" name="password" required></label><br>
+    <label>Verify Password:<br><input type="password" name="verify-password" required></label><br>
+    <label>First Name: <br><input type="text" name="firstname"></label><br>
+    <label>Last Name: <br><input type="text" name="lastname"></label><br>
     <br><br>
-    <button type="submit" value="Submit">Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </body>
 </html>

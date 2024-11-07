@@ -14,8 +14,14 @@
   <% } %>
   <%if (locals.currentUser) { %>
     <p>You are logged in</p>
-    <p>Welcome <%= locals.currentUser.username %></p>
+    <p>Welcome <%= locals.currentUser.firstname %> <%= locals.currentUser.lastname %></p>
     <a href="/logout">Logout</a>
+    <% if (!locals.currentUser.membership) {%>
+      <a href="/membership">Become a member now!</a>
+    <%}%>
+    <% if (locals.currentUser.membership === 'member') { %>
+    <p>Welcome member!</p>
+    <%}%>
   <%}%>
 </body>
 </html>
