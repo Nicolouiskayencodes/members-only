@@ -17,7 +17,7 @@
     <button type="submit">Submit</button>
   </form>
   <% }%>
-  <% if (locals.currentUser) {%>
+  <% if (!locals.currentUser) {%>
     <p><a href="/login">Login</a> to become a member</p>
   <%}%>
 </body>

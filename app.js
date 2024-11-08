@@ -37,10 +37,6 @@ app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   next();
 });
-app.use((req, res, next)=>{
-  console.log(res.locals);
-  next();
-})
 
 app.use(routes);
 

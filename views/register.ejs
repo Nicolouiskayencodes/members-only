@@ -8,12 +8,13 @@
 <body>
   <h1>Register Page</h1>
   <a href="/">Home</a>
+  <%- include('errors.ejs') %>
   <form method="post" action="register">
     <label>Enter Username:<br><input type="text" name="username" required></label><br>
     <label>Enter Password:<br><input type="password" name="password" required></label><br>
     <label>Verify Password:<br><input type="password" name="verify-password" required></label><br>
-    <label>First Name: <br><input type="text" name="firstname"></label><br>
-    <label>Last Name: <br><input type="text" name="lastname"></label><br>
+    <label>First Name: <br><input type="text" name="firstname" required></label><br>
+    <label>Last Name: <br><input type="text" name="lastname" required></label><br>
     <br><br>
     <button type="submit">Submit</button>
   </form>

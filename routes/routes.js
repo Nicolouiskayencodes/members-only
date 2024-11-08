@@ -16,5 +16,8 @@ router.get('/membership', controller.membership)
 router.post('/membership', controller.addMember)
 router.get('/message', controller.messageForm)
 router.post('/message', controller.createMessage)
-
+router.get('/admin', controller.admin)
+router.post('/admin', controller.addAdmin)
+router.get('/delete/:id', controller.deleteConfirm)
+router.post('/delete/:id', controller.deleteMessage)
 module.exports = router;

@@ -5,8 +5,11 @@
         <p><%= message.body %></li></p>
         <% if (locals.currentUser) {%>
           <% if (locals.currentUser.membership === 'member') {%>
-            <p>Created: <%= message.time%></p>
-            <p>Author: <%= message.username%></p>
+            <p>Created: <%= new Date(message.time)%></p>
+            <p>Author: <%= message.username %></p>
+          <%}%>
+          <% if (locals.currentUser.admin === true) { %>
+            <button><a href="/delete/<%=message.messageid%>">Delete Message</a></button>
           <%}%>
         <%}%>
     <% }); %>

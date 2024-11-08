@@ -20,7 +20,13 @@
       <a href="/membership">Become a member now!</a>
     <%}%>
     <% if (locals.currentUser.membership === 'member') { %>
-    <p>Welcome member!</p>
+      <% if (!locals.currentUser.admin) {%>
+        <a href="/admin">Become an admin</a>
+        <p>You are a member!</p>
+      <%}%>
+      <% if (locals.currentUser.admin) {%>
+        <p>You are an admin!</p>
+      <%}%>
     <a href="/message">Create new message</a>
     <%}%>
   <%}%>
