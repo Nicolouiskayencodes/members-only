@@ -27,8 +27,14 @@ const register = async (req, res, next) => {
   })
 }
 
-const index = (req, res, next) => {
-  res.render('index')
+const index = async (req, res, next) => {
+  try{
+    let messages = await db.getAllMessages()
+    console.log(messages)
+    res.render('index', {messages: messages})
+  } catch (err){
+    return next(err)
+  }
 }
 
 const loginForm = (req, res, next) => {
@@ -74,4 +80,17 @@ const addMember = async (req, res, next) => {
   }
 }
 
-module.exports = {login, register, index, loginForm, registerForm, logout, redirectIndex, loginFailure, membership, addMember}
+const messageForm = (req, res) => {
+  res.render('message');
+}
+
+const createMessage = async (req, res, next) => {
+  try {
+    await db.createMessage(req.body.title, req.body.message_body, res.locals.currentUser.id);
+    res.redirect('/')
+  } catch (err) {
+    return next(err);
+  }
+}
+
+module.exports = {login, register, index, loginForm, registerForm, logout, redirectIndex, loginFailure, membership, addMember, messageForm, createMessage}

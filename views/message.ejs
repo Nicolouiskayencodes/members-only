@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Message</title>
+</head>
+<body>
+  <h1>New Message</h1>
+  <a href="/">Home</a>
+  <% if (locals.currentUser) { %>
+    <form method="POST" action="/message">
+      <label>Title: <br>
+        <input type="text" name="title">
+      </label><br>
+      <label>Message: <br>
+        <textarea name="message_body"></textarea>
+      </label><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  <%}%>
+  <% if (!locals.currentUser) { %>
+    <p>You must be a member to create messages! </p>
+    <a href="/membership">Become a member now!</a>
+  <%}%>
+</body>
+</html>

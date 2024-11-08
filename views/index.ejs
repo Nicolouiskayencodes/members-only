@@ -21,7 +21,10 @@
     <%}%>
     <% if (locals.currentUser.membership === 'member') { %>
     <p>Welcome member!</p>
+    <a href="/message">Create new message</a>
     <%}%>
   <%}%>
+  <br>
+  <%- include('messages.ejs') %>
 </body>
 </html>

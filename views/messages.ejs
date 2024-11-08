@@ -1,0 +1,14 @@
+<% if (messages) {%>
+  <ul>
+    <% messages.forEach(function(message) { %>
+      <li><h2><%= message.title %></h2>
+        <p><%= message.body %></li></p>
+        <% if (locals.currentUser) {%>
+          <% if (locals.currentUser.membership === 'member') {%>
+            <p>Created: <%= message.time%></p>
+            <p>Author: <%= message.username%></p>
+          <%}%>
+        <%}%>
+    <% }); %>
+  </ul>
+<% } %>

@@ -7,12 +7,18 @@
 </head>
 <body>
   <h1>Join the club!</h1>
+  <a href="/">Home</a>
   <%- include("errors.ejs") %>
+  <% if (locals.currentUser) {%>
   <form method="POST" action="/membership">
     <label>Enter membership password: <br>
     <input type="password" name="membership"></label>
     <br><br>
     <button type="submit">Submit</button>
   </form>
+  <% }%>
+  <% if (locals.currentUser) {%>
+    <p><a href="/login">Login</a> to become a member</p>
+  <%}%>
 </body>
 </html>

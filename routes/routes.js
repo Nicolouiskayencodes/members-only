@@ -14,5 +14,7 @@ router.get('/login-success', controller.redirectIndex);
 router.get('/login-failure', controller.loginFailure);
 router.get('/membership', controller.membership)
 router.post('/membership', controller.addMember)
+router.get('/message', controller.messageForm)
+router.post('/message', controller.createMessage)
 
 module.exports = router;
